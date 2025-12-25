@@ -28,7 +28,14 @@ function createGrid(size) {
 		square.style.width = `${calcSize}px`;
 		square.style.height = `${calcSize}px`;
 		square.addEventListener("mouseover", (event) => {
-			square.style.backgroundColor = randRGB();
+			console.log(square.style);
+			if (square.style.backgroundColor && square.style.opacity < 1) {
+				square.style.opacity = +square.style.opacity + 0.1;
+			}
+			else if (!square.style.backgroundColor) {
+				square.style.backgroundColor = randRGB();
+				square.style.opacity = 0.1;
+			}
 		})
 		grid.appendChild(square);
 	}
