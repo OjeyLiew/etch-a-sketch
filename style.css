@@ -6,13 +6,9 @@
 
 .square {
 	border: 1px solid black;
-	width: 60px;
-	height: 60px;
 }
 
 .grid {
 	display: flex;
 	flex-wrap: wrap;
-	width: 960px;
-	height: 960px;
 }
