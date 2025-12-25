@@ -28,11 +28,20 @@ function createGrid(size) {
 		square.style.width = `${calcSize}px`;
 		square.style.height = `${calcSize}px`;
 		square.addEventListener("mouseover", (event) => {
-			square.style.backgroundColor = "red";
+			square.style.backgroundColor = randRGB();
 		})
 		grid.appendChild(square);
 	}
 	body.appendChild(grid);
 }
 
-console.log(window.innerWidth);
+function rndInt(val) {
+	return Math.ceil(val*Math.random());
+}
+
+function randRGB() {
+	red = rndInt(255);
+	green = rndInt(255);
+	blue = rndInt(255);
+	return `rgb(${red}, ${green}, ${blue})`;
+}
